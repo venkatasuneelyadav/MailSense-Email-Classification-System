@@ -1,0 +1,7 @@
+venv/
+.env
+__pycache__/
+*.pyc
+*.db
+email_classifier_ENSEMBLE_MODEL.joblib
+
