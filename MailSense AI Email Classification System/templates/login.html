@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8">
+    <div class="card shadow-sm overflow-hidden rounded-4">
+      <div class="row g-0">
+
+        <!-- Left illustration (hidden on small screens) -->
+        <div class="col-md-5 d-none d-md-block bg-primary text-white p-4 d-flex flex-column justify-content-center align-items-center">
+          <h3 class="fw-bold">Welcome Back</h3>
+          <p class="text-white-50">Login to access your classifier & history</p>
+          <i class="bi bi-shield-lock-fill display-4 opacity-75"></i>
+        </div>
+
+        <!-- Form -->
+        <div class="col-md-7 p-4">
+          <div class="card-body">
+            <h4 class="card-title mb-3">🔐 Sign in</h4>
+
+            {% if error %}
+              <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+
+            <form method="POST" autocomplete="off">
+              <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input name="username" class="form-control form-control-lg" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input name="password" type="password" class="form-control form-control-lg" required>
+              </div>
+
+              <div class="d-grid">
+                <button class="btn btn-primary btn-lg">Login</button>
+              </div>
+            </form>
+
+            <div class="mt-3 text-center">
+              <small class="text-muted">Don't have an account? <a href="/signup">Create one</a></small>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Updated Footer Text -->
+    <p class="text-center text-muted mt-3 small">Built for GenAI Project • SRM AP</p>
+
+  </div>
+</div>
+{% endblock %}

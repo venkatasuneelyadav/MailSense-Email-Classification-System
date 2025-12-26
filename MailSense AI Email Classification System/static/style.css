@@ -1,0 +1,169 @@
+/* --------------------------------------------------------
+   Global Light Theme Variables
+-------------------------------------------------------- */
+:root {
+  --glass: rgba(255,255,255,0.85);
+  --text: #222;
+  --text-muted: #6c757d;
+  --radius: 12px;
+  --accent: #0d6efd;
+  --bg: #eef3f8;
+  --card: #ffffff;
+  --border-light: rgba(0,0,0,0.08);
+}
+
+/* --------------------------------------------------------
+   Body + Typography
+-------------------------------------------------------- */
+body.site-bg {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f7fbff, var(--bg));
+  color: var(--text);
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* --------------------------------------------------------
+   Card Styling
+-------------------------------------------------------- */
+.card {
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--border-light);
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+/* Navbar brand */
+.brand-title { font-weight: 700; letter-spacing: 0.2px; }
+.brand-logo { font-size: 22px; }
+
+/* --------------------------------------------------------
+   Buttons
+-------------------------------------------------------- */
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), #0b5ed7);
+  border: none !important;
+}
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+
+.btn-outline-secondary,
+.btn-outline-primary,
+.btn-outline-danger {
+  transition: 0.2s ease-in-out;
+}
+
+.btn-outline-secondary:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* --------------------------------------------------------
+   Alerts Rounded
+-------------------------------------------------------- */
+.alert {
+  border-radius: 10px;
+}
+
+/* --------------------------------------------------------
+   Timeline (History)
+-------------------------------------------------------- */
+.timeline-item {
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+}
+
+/* --------------------------------------------------------
+   Badges
+-------------------------------------------------------- */
+.badge {
+  font-weight: 600;
+  padding: 0.55em 0.7em;
+}
+
+/* --------------------------------------------------------
+   Forms (Light Mode)
+-------------------------------------------------------- */
+input.form-control,
+textarea.form-control,
+select.form-select {
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  transition: 0.3s;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,0.25);
+}
+
+/* --------------------------------------------------------
+   Responsive Tweaks
+-------------------------------------------------------- */
+@media (max-width: 767px) {
+  .brand-title { display: none; }
+}
+
+/* ===================================================================
+   DARK MODE 🌙 (Activated when body.dark is applied)
+=================================================================== */
+body.dark {
+  --glass: rgba(14,17,23,0.8);
+  --bg: #0b1220;
+  --card: #111827;
+  --text: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border-light: rgba(255,255,255,0.08);
+
+  background: linear-gradient(180deg, #0f172a, #0a0f1e);
+  color: var(--text);
+}
+
+/* Dark Mode - Cards */
+body.dark .card {
+  background: var(--card);
+  border: 1px solid var(--border-light);
+}
+
+/* Dark Mode - Navbar */
+body.dark .navbar {
+  background: linear-gradient(90deg,#1e3a8a,#1e40af) !important;
+}
+
+/* Dark Mode - Form Fields */
+body.dark input.form-control,
+body.dark textarea.form-control {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text);
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Dark Mode - Alerts */
+body.dark .alert {
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Dark Mode - Buttons */
+body.dark .btn-outline-secondary {
+  border-color: rgba(255,255,255,0.4) !important;
+  color: var(--text);
+}
+body.dark .btn-outline-secondary:hover {
+  background: rgba(255,255,255,0.09);
+}
+
+/* Dark Mode - Badges */
+body.dark .badge {
+  opacity: 0.95;
+}
+
+/* Smooth transitions */
+html, body, .card, .navbar, input, textarea {
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}

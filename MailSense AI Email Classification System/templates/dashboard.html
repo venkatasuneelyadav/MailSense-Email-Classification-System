@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-7">
+    <div class="card shadow-sm rounded-4 mb-4">
+      <div class="card-body p-4">
+        <h4 class="fw-bold mb-3">📬 Classify an email</h4>
+
+        <form method="POST">
+          <div class="mb-3">
+            <label class="form-label">Subject</label>
+            <input name="subject" class="form-control" placeholder="e.g. Urgent: Meeting tomorrow" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Body</label>
+            <textarea name="body" rows="7" class="form-control" placeholder="Type full email body..." required></textarea>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-primary me-auto">Predict</button>
+            <a href="/history" class="btn btn-outline-secondary">View History</a>
+          </div>
+        </form>
+
+        {% if prediction %}
+          <div class="mt-4">
+            <div class="alert alert-info rounded-3 d-flex align-items-center gap-3">
+              <div>
+                <h5 class="mb-1">📌 Prediction: <strong>{{ prediction }}</strong></h5>
+                <div class="text-muted small">Confidence: {{ confidence }}%</div>
+              </div>
+              <div class="ms-auto">
+                <i class="bi bi-check-circle-fill display-5 text-success"></i>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-5">
+    <div class="card shadow-sm rounded-4 mb-4">
+      <div class="card-body p-4">
+        <h5 class="fw-semibold">Quick Tips</h5>
+        <ul class="small text-muted">
+          <li>Use clear subject lines (e.g. "Urgent: ...").</li>
+          <li>Long emails may include important context — include the body.</li>
+          <li>View and download history for reporting.</li>
+        </ul>
+        <hr>
+        <a href="/download_csv" class="btn btn-success w-100 mb-2"><i class="bi bi-download me-2"></i>Download History CSV</a>
+        <a href="/history" class="btn btn-outline-primary w-100">Open History</a>
+      </div>
+    </div>
+
+    <div class="card border-0 shadow-sm rounded-4">
+      <div class="card-body p-4">
+        <h6 class="fw-semibold">Recent activity</h6>
+        <p class="small text-muted mb-0">Open the history page to view detailed records.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="text-center mb-5">
+  <h1 class="fw-bold">📧 MailSense – AI Email Classification System</h1>
+  <p class="text-muted fs-5">
+    An intelligent machine learning solution designed to analyze and classify emails with high accuracy.
+  </p>
+</div>
+
+<div class="card shadow-sm rounded-4 mb-4">
+  <div class="card-body p-4">
+
+    <!-- Project Overview -->
+    <h3 class="fw-semibold mb-3">📘 Project Overview</h3>
+    <p class="text-muted">
+      <strong>MailSense</strong> is an AI-powered email classification system that automatically categorizes 
+      incoming emails into classes such as <strong>Important</strong>, <strong>Spam</strong>, 
+      <strong>Promotional</strong>, and more.
+      <br><br>
+      The system uses advanced Natural Language Processing (NLP) techniques combined with a 
+      <strong>Soft Voting Ensemble Machine Learning Model</strong> consisting of SVM, Logistic Regression, 
+      and Naive Bayes to ensure robust and reliable predictions. MailSense helps users focus on what matters 
+      by prioritizing essential communication.
+    </p>
+
+    <!-- Objectives -->
+    <h4 class="fw-semibold mt-4 mb-2">🎯 Objectives</h4>
+    <ul class="text-muted">
+      <li>Automatically classify and categorize incoming emails</li>
+      <li>Improve user productivity by identifying important messages</li>
+      <li>Reduce exposure to spam and phishing attempts</li>
+      <li>Provide confidence-based prediction for every email</li>
+      <li>Offer a clean and user-friendly dashboard for prediction & history tracking</li>
+    </ul>
+
+    <!-- Technology Stack -->
+    <h4 class="fw-semibold mt-4 mb-2">🛠️ Technology Stack</h4>
+    <ul class="text-muted">
+      <li><strong>Frontend:</strong> HTML, Bootstrap 5, Custom Dark-Mode UI</li>
+      <li><strong>Backend:</strong> Flask (Python)</li>
+      <li><strong>Machine Learning:</strong> Soft Voting Ensemble (SVM + LR + NB)</li>
+      <li><strong>Preprocessing:</strong> NLP – Lemmatization, Stopword Removal, Regex Cleaning</li>
+      <li><strong>Database:</strong> SQLite</li>
+    </ul>
+
+    <!-- CTA Button -->
+    <div class="text-center mt-4">
+      <a href="/dashboard" class="btn btn-primary btn-lg px-4">Go to Prediction</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
